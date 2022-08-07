@@ -1,0 +1,28 @@
+﻿@model EntityLayer.Concrete.Araclar
+
+@{
+    ViewBag.Title = "AddArac";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Araç Ekleme</h1>
+<br />
+@using (Html.BeginForm("AddArac", "Araclar", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Araç Markası")
+        @Html.TextBoxFor(x => x.A_Marka, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.A_Marka)
+        <br />
+        @Html.Label("Araç Plaka")
+        @Html.TextBoxFor(x => x.A_Plaka, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.A_Plaka)
+        <br />
+        @Html.Label("Araç Sahibi")
+        @Html.TextBoxFor(x => x.M_Id, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.M_Id)
+        <br />
+        <button class="btn btn-info">Araç Ekle</button>
+    </div>
+
+}

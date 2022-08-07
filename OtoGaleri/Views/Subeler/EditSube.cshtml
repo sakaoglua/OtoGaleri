@@ -1,0 +1,22 @@
+﻿@model EntityLayer.Concrete.Subeler
+
+@{
+    ViewBag.Title = "EditSube";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Şube Düzenleme Sayfası</h2>
+@using (Html.BeginForm("EditSube", "Subeler", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Şube Id")
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+        <br />
+        @Html.Label("Şube Adı")
+        @Html.TextBoxFor(x => x.S_Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.S_Name)
+        <br />
+        <button class="btn btn-success">Güncelle</button>
+    </div>
+}

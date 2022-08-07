@@ -1,0 +1,22 @@
+﻿@model EntityLayer.Concrete.Kullanicilar
+@{
+    ViewBag.Title = "AddKullanici";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Kullanıcı Ekleme Sayfası</h1>
+<br />
+@using (Html.BeginForm("AddKullanici", "AdminKullanici", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Kullanıcı Adı")
+        @Html.TextBoxFor(x => x.K_Adi, new {@class="form-control"})
+        @Html.ValidationMessageFor(x => x.K_Adi)
+        <br /> <br />
+        @Html.Label("Parola")
+        @Html.TextBoxFor(x => x.K_Sifre, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.K_Sifre)
+        <br /> <br />
+        <button class="btn btn-info">Kaydet</button>
+    </div>
+}

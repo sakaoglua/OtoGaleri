@@ -1,0 +1,20 @@
+﻿@model EntityLayer.Concrete.Subeler
+
+@{
+    ViewBag.Title = "AddSube";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Şube Ekleme</h1>
+<br />
+@using (Html.BeginForm("AddSube", "Subeler", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Şube Adı")
+        @Html.TextBoxFor(x => x.S_Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.S_Name)
+        <br />
+        <button class="btn btn-info">Şube Ekle</button>
+    </div>
+
+}

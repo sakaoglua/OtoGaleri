@@ -1,0 +1,32 @@
+﻿@model EntityLayer.Concrete.Musteriler
+@{
+    ViewBag.Title = "EditMusteri";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Müşteri Düzenleme Sayfası</h2>
+@using (Html.BeginForm("EditMusteri", "Musteriler", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Müşteri Id")
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+        <br />
+        @Html.Label("Müşteri Adı")
+        @Html.TextBoxFor(x => x.M_Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.M_Name)
+        <br />
+        @Html.Label("Müşteri Soyadı")
+        @Html.TextBoxFor(x => x.M_Surname, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.M_Surname)
+        <br />
+        @Html.Label("Müşteri Hakkında")
+        @Html.TextBoxFor(x => x.M_About, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.M_About)
+        <br />
+        @Html.Label("Müşteri Unvan")
+        @Html.TextBoxFor(x => x.M_Unvan, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.M_Unvan)
+        <button class="btn btn-success">Güncelle</button>
+    </div>
+}
+
